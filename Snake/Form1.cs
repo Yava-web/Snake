@@ -1,13 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Snake
@@ -26,7 +21,7 @@ namespace Snake
         private SnakeAI aiSnake;
         private Stopwatch timer;
 
-        //Конструктор класса Form1. Ввызывается при создании нового объекта Form1
+        //Конструктор класса Form1. Вызывается при создании нового объекта Form1
         public Form1()
         {
             //InitializeComponent инициализирует компоненты формы (PictureBox и др)
