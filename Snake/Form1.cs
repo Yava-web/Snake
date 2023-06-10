@@ -342,19 +342,19 @@ namespace Snake
                     Brush snakeColour;
 
                     if (i == 0)
-                        snakeColour = Brushes.White;
+                        snakeColour = Settings.HeadColor;
                     else
-                        snakeColour = Brushes.Green;
+                        snakeColour = Settings.BodyColor;
 
                     canvas.FillRectangle(snakeColour,
-                     new Rectangle(Snake[i].X * Settings.Width,
-                         Snake[i].Y * Settings.Height,
-                         Settings.Width, Settings.Height));
+                        new Rectangle(aiSnake.Snake[i].X * Settings.Width,
+                                      aiSnake.Snake[i].Y * Settings.Height,
+                                      Settings.Width, Settings.Height));
 
                     canvas.DrawRectangle(Settings.BodyBorderColor,
-                        new Rectangle(Snake[i].X * Settings.Width,
-                            Snake[i].Y * Settings.Height,
-                            Settings.Width, Settings.Height));
+                            new Rectangle(aiSnake.Snake[i].X * Settings.Width,
+                                        aiSnake.Snake[i].Y * Settings.Height,
+                                        Settings.Width, Settings.Height));
 
                 }
                 canvas.FillEllipse(Settings.FoodColor,
