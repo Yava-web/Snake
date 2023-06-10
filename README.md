@@ -1,3 +1,3 @@
 # Snake game with a computer opponent
-___
 ```
+DESCRIPTION IN DEVELOPING
