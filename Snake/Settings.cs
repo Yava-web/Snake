@@ -1,4 +1,6 @@
-﻿namespace Snake
+﻿using System.Drawing;
+
+namespace Snake
 {
     // Класс enumeration
     internal enum Direction
@@ -28,17 +30,20 @@
 
         // Текущий счет в игре
         public static int Score { get; set; }
-
         public static int ScoreAI { get; set; }
 
         // На сколько увеличивается счет после пищи
         public static int Points { get; set; }
-
         public static int PointsAI { get; set; }
 
         // Состояние игры - true означает, что она закончена, false означает, что она все еще запущена
         public static bool GameOver { get; set; }
         public static bool GameOverAI { get; set; }
+
+        public static Brush HeadColor { get; set; }
+        public static Brush BodyColor { get; set; }
+        public static Pen BodyBorderColor { get; set; }
+        public static Brush FoodColor { get; set; }
 
         // Направление, в котором в данный момент движется змейка
         public static Direction direction { get; set; }
@@ -59,6 +64,12 @@
 
             ScoreAI = 0;
             PointsAI = 100;
+
+            HeadColor = Brushes.White;
+            BodyColor = Brushes.Green;
+            BodyBorderColor = Pens.Black;
+
+            FoodColor = Brushes.Red;
         }
     }
 }

@@ -298,12 +298,11 @@ namespace Snake
                 {
                     //Цвет границы элементов змеи
                     Brush snakeColour;
-                    Pen snakeBorder = Pens.Black;
 
                     if (i == 0)
-                        snakeColour = Brushes.White;     //Цвет головы змеи
+                        snakeColour = Settings.HeadColor;     //Цвет головы змеи
                     else
-                        snakeColour = Brushes.Green;    //Цвет тела змеи
+                        snakeColour = Settings.BodyColor;    //Цвет тела змеи
 
                     //Отрисовываем элементы змеи 
                     canvas.FillRectangle(snakeColour,
@@ -312,14 +311,14 @@ namespace Snake
                          Settings.Width, Settings.Height));
 
                     //Отрисовываем границы элементов змеи 
-                    canvas.DrawRectangle(snakeBorder,
+                    canvas.DrawRectangle(Settings.BodyBorderColor,
                         new Rectangle(Snake[i].X * Settings.Width,
                             Snake[i].Y * Settings.Height,
                             Settings.Width, Settings.Height));
 
                 }
                 // Рисуем еду
-                canvas.FillEllipse(Brushes.Red,
+                canvas.FillEllipse(Settings.FoodColor,
                     new Rectangle(food.X * Settings.Width,
                          food.Y * Settings.Height, Settings.Width, Settings.Height));
             }
@@ -341,24 +340,24 @@ namespace Snake
                 for (int i = 0; i < aiSnake.Snake.Count; i++)
                 {
                     Brush snakeColour;
-                    Pen snakeBorder = Pens.Black;
+
                     if (i == 0)
                         snakeColour = Brushes.White;
                     else
                         snakeColour = Brushes.Green;
 
                     canvas.FillRectangle(snakeColour,
-                        new Rectangle(aiSnake.Snake[i].X * Settings.Width,
-                                      aiSnake.Snake[i].Y * Settings.Height,
-                                      Settings.Width, Settings.Height));
+                     new Rectangle(Snake[i].X * Settings.Width,
+                         Snake[i].Y * Settings.Height,
+                         Settings.Width, Settings.Height));
 
-                    canvas.DrawRectangle(snakeBorder,
-                            new Rectangle(aiSnake.Snake[i].X * Settings.Width,
-                                        aiSnake.Snake[i].Y * Settings.Height,
-                                        Settings.Width, Settings.Height));
+                    canvas.DrawRectangle(Settings.BodyBorderColor,
+                        new Rectangle(Snake[i].X * Settings.Width,
+                            Snake[i].Y * Settings.Height,
+                            Settings.Width, Settings.Height));
 
                 }
-                canvas.FillEllipse(Brushes.Red,
+                canvas.FillEllipse(Settings.FoodColor,
                         new Rectangle(aiSnake.Food.X * Settings.Width,
                                       aiSnake.Food.Y * Settings.Height, Settings.Width, Settings.Height));
             }
