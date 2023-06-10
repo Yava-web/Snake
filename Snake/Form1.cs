@@ -104,9 +104,7 @@ namespace Snake
             int maxXPos = PictureBox.Size.Width / Settings.Width;
             int maxYPos = PictureBox.Size.Height / Settings.Height;
 
-            // Генерируем еду в случайном месте
-            Random random = new Random();
-            food = new Food { X = random.Next(0, maxXPos), Y = random.Next(0, maxYPos) };
+            food = food.GenerateFood(maxXPos, maxYPos);
         }
 
         // Метод, который обновляет состояние игры

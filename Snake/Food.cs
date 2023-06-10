@@ -1,4 +1,6 @@
-﻿namespace Snake
+﻿using System;
+
+namespace Snake
 {
     internal class Food
     {
@@ -11,6 +13,13 @@
         {
             X = 0;
             Y = 0;
+        }
+
+        public Food GenerateFood(int maxXPos, int maxYPos)
+        {
+            Random random = new Random();
+            Food Food = new Food { X = random.Next(0, maxXPos), Y = random.Next(0, maxYPos) };
+            return Food;
         }
     }
 }

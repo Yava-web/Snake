@@ -11,11 +11,11 @@ namespace Snake
 
         private Direction direction;
         // Максимальное положение x и y, куда змея может переместиться на экране
-        private int maxXPos;
-        private int maxYPos;
+        private readonly int maxXPos;
+        private readonly int maxYPos;
 
         private Label lblScoreAI;
-        private Timer gameTimerAI;
+        private readonly Timer gameTimerAI;
 
         //Конструктор класса
         public SnakeAI(int maxXPos, int maxYPos, Label lblScoreAI, Timer gameTimerAI)
@@ -32,8 +32,7 @@ namespace Snake
         // Метод генерации еды
         public void GenerateFood()
         {
-            Random random = new Random();
-            Food = new Food { X = random.Next(0, maxXPos), Y = random.Next(0, maxYPos) };
+            Food = Food.GenerateFood(maxXPos, maxYPos);
         }
 
         // Метод перемещения змейки ИИ по экрану
